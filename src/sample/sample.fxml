@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <HBox alignment="CENTER" fillHeight="false" prefHeight="93.0" prefWidth="600.0" spacing="50.0">
+            <children>
+                <StackPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="140.0">
+                    <children>
+                        <Label fx:id="couse1_lab" onMouseClicked="#editValyuta_1" text="USD" underline="true">
+                            <StackPane.margin>
+                                <Insets left="10.0" />
+                            </StackPane.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="course_1" maxHeight="1.7976931348623157E308" onAction="#edit_confirm_1" text="USD" visible="false">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </StackPane>
+                <StackPane alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="140.0" HBox.hgrow="NEVER">
+                    <children>
+                        <Label fx:id="couse2_lab" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#editValyuta_2" text="RMB" underline="true">
+                            <StackPane.margin>
+                                <Insets left="10.0" />
+                            </StackPane.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="course_2" maxHeight="1.7976931348623157E308" onAction="#edit_confirm_2" text="RMB" visible="false">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </StackPane>
+            </children>
+        </HBox>
+        <VBox>
+            <children>
+                <HBox alignment="CENTER" prefHeight="60.0" spacing="50.0">
+                    <children>
+                        <JFXRadioButton fx:id="rb_g1" focusTraversable="false" mnemonicParsing="false" onAction="#radioSwitch" selected="true" text="USD -&gt; RMB">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="group_1" />
+                            </toggleGroup>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </JFXRadioButton>
+                        <Label fx:id="_1_amount_course_1" text="1 USD">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="course_g1" labelFloat="true" onKeyReleased="#convert" promptText="RMB" text="0">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </JFXTextField>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="60.0" spacing="50.0">
+                    <children>
+                        <JFXRadioButton fx:id="rb_g2" focusTraversable="false" mnemonicParsing="false" onAction="#radioSwitch" text="RMB -&gt; USD" toggleGroup="$group_1">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </JFXRadioButton>
+                        <Label fx:id="_1_amount_course_2" text="1 RMB">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="course_g2" labelFloat="true" onKeyReleased="#convert" promptText="USD" text="0">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </JFXTextField>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" maxHeight="300.0" prefHeight="100.0" prefWidth="200.0" spacing="50.0" VBox.vgrow="ALWAYS">
+            <children>
+                <JFXTextField fx:id="input" labelFloat="true" onKeyReleased="#convert" promptText="RMB" text="0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXTextField>
+                <JFXButton fx:id="switchBt" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#onSwitch" prefHeight="45.0" prefWidth="47.0" style="-fx-background-radius: 6; -fx-background-color: rgba(242,204,255,0);" text=" ">
+                    <graphic>
+                        <MaterialDesignIconView fill="#00054f" glyphName="SWAP_HORIZONTAL" nodeOrientation="LEFT_TO_RIGHT" size="40" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" />
+                    </graphic>
+                </JFXButton>
+                <JFXTextField fx:id="output" editable="false" labelFloat="true" layoutX="236.0" layoutY="73.0" promptText="USD" text="0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXTextField>
+            </children>
+        </HBox>
+    </children>
+</VBox>
